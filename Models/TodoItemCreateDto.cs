@@ -1,8 +1,7 @@
 namespace TodoApi.Models;
 
-public class TodoItemDto
+public class TodoItemCreateDto
 {
-    public Guid Id { get; set;}
     public string? Name { get; set; }
     public bool IsComplete { get; set; }
 }

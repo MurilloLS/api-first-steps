@@ -41,13 +41,8 @@ namespace TodoApi.Controllers
 
         // PUT: api/TodoItems/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodoItem(Guid id, TodoItemDto todoDTO)
+        public async Task<IActionResult> PutTodoItem(Guid id, TodoItemUpdateDto todoDTO)
         {
-            if (id != todoDTO.Id)
-            {
-                return BadRequest();
-            }
-
             var todoItem = await _context.TodoItems.FindAsync(id);
             if (todoItem == null)
             {
